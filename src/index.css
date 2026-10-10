@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-brand-blue: #0066FF;
+  --color-brand-navy: #0A1F44;
+  --color-brand-orange: #FF6B00;
+  --color-brand-blue-light: #3385FF;
+  --color-brand-blue-dark: #0052CC;
+  --color-brand-navy-light: #1a3a6e;
+  --color-brand-orange-light: #FF8533;
+  --color-brand-orange-dark: #CC5500;
+
+  --font-display: 'Plus Jakarta Sans', 'Noto Sans Arabic', sans-serif;
+  --font-body: 'Inter', 'Noto Sans Arabic', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #CBD5E1;
+  border-radius: 3px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+
+/* ===================== Survey Points Analyzer — GeoTech Design System tokens ===================== */
+/* مطابقة لألوان Create_GeoTech_Design_System.zip: رمادي + أبيض، والبرتقالي هو اللون المميز الوحيد */
+[data-theme="dark"]{
+  --bg:#0D0F12; --bg-panel:#1A1D23; --bg-panel-2:#1E2128; --bg-subtle:#22262E; --border:#2D3139;
+  --text:#F8F9FB; --text-dim:#E5E7EB; --text-faint:#9CA3AF;
+  --accent:#FF6B00; --accent-light:#FF8533; --accent-dark:#CC5500; --accent-tint:#3D2800;
+  --success:#10B981; --error:#EF4444; --warning:#F59E0B; --info:#6366F1;
+}
+[data-theme="light"]{
+  --bg:#F8F9FB; --bg-panel:#FFFFFF; --bg-panel-2:#FFFFFF; --bg-subtle:#F1F3F5; --border:#E5E7EB;
+  --text:#1A1D23; --text-dim:#4B5563; --text-faint:#6B7280;
+  --accent:#FF6B00; --accent-light:#FF8533; --accent-dark:#CC5500; --accent-tint:#FFF4ED;
+  --success:#10B981; --error:#EF4444; --warning:#F59E0B; --info:#6366F1;
+}
+.font-display{ font-family: var(--font-display); }
+.mono{ font-family: var(--font-mono); }
+.btn-primary{ background:var(--text); color:var(--bg); }
+[data-theme="dark"] .btn-primary{ background:#F8F9FB; color:#1A1D23; }
+.focus-ring:focus{ outline:none; border-color:var(--accent) !important; box-shadow:0 0 0 3px rgba(255,107,0,0.16); }
+.maplibregl-popup-content{ background:var(--bg-panel) !important; color:var(--text) !important; border:1px solid var(--border); border-radius:12px !important; font-family:var(--font-body); box-shadow:0 12px 32px rgba(0,0,0,0.28) !important; }
+.maplibregl-popup-tip{ border-top-color:var(--bg-panel) !important; border-bottom-color:var(--bg-panel) !important; }
+.maplibregl-ctrl-attrib{ direction:ltr; font-size:10px; }
+.maplibregl-ctrl-group{ background:var(--bg-panel) !important; border:1px solid var(--border) !important; box-shadow:none !important; }
+.maplibregl-ctrl-group button{ filter: var(--mapbox-ctrl-filter, none); }
+[data-theme="dark"] .maplibregl-ctrl-group button{ filter: invert(1) brightness(1.3); }
+
+.maplibregl-popup{ z-index:10; }
